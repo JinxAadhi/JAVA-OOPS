@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class LongestPositiveSequenceSum {
+
+    public static int longestPositiveSequenceSum(int input1, int[] input2) {
+        int maxLength = 0;
+        int maxSum = -1;
+        int currentLength = 0;
+        int currentSum = 0;
+        
+        for (int i = 0; i < input1; i++) {
+            if (input2[i] >= 0) { // 0 is considered positive
+                currentSum += input2[i];
+                currentLength++;
+            } else {
+                if (currentLength > maxLength) {
+                    maxLength = currentLength;
+                    maxSum = currentSum;
+                } else if (currentLength == maxLength) {
+                    maxSum += currentSum;
+                }
+                // Reset current sequence counters
+                currentLength = 0;
+                currentSum = 0;
+            }
+        }
+
+        // Final check in case the array ends with a positive sequence
+        if (currentLength > maxLength) {
+            maxSum = currentSum;
+        } else if (currentLength == maxLength) {
+            maxSum += currentSum;
+        }
+
+        return maxSum == -1 ? -1 : maxSum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        int input1 = sc.nextInt();
+        int[] input2 = new int[input1];
+        
+       
+        for (int i = 0; i < input1; i++) {
+            input2[i] = sc.nextInt();
+        }
+
+        // Call the function and print the result
+        int result = longestPositiveSequenceSum(input1, input2);
+        System.out.println( result);
+
+        sc.close();
+    }
+}
