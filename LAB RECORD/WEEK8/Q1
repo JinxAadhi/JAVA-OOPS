@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class VowelStringExtractor {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = 0;
+
+        // Step 1: Input number of elements
+        if (scanner.hasNextInt()) {
+            n = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline
+        } else {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        // Step 2: Input the string array
+        String inputLine = scanner.nextLine();
+        String[] strings = inputLine.split(" ");
+
+        // Validate number of strings
+        if (strings.length != n) {
+            System.out.println("Number of strings does not match the input count");
+            return;
+        }
+
+        // Step 3: Concatenate valid strings
+        StringBuilder result = new StringBuilder();
+        for (String str : strings) {
+            if (str.length() > 0 && isVowel(str.charAt(0)) && isVowel(str.charAt(str.length() - 1))) {
+                result.append(str);
+            }
+        }
+
+        // Step 4: Output the result
+        if (result.length() > 0) {
+            System.out.println(result.toString().toLowerCase());
+        } else {
+            System.out.println("no matches found");
+        }
+
+        scanner.close();
+    }
+
+    private static boolean isVowel(char c) {
+        char lowerC = Character.toLowerCase(c);
+        return lowerC == 'a' || lowerC == 'e' || lowerC == 'i' || lowerC == 'o' || lowerC == 'u';
+    }
+}
