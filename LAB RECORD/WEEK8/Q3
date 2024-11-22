@@ -1,0 +1,16 @@
+public class FinalExample {
+
+    // Final variable
+    public static final int MAX_SPEED = 120; // Corrected initialization
+
+    // Final method
+    public final void display() {
+        System.out.println("The maximum speed is: " + MAX_SPEED + " km/h");
+    }
+
+    public static void main(String[] args) {
+        FinalExample example = new FinalExample(); // Corrected object creation
+        example.display(); // Corrected method call
+        System.out.println("This is a subclass of FinalExample."); // Complete the output statement
+    }
+}
