@@ -1,0 +1,46 @@
+import java.util.*;
+class prog
+{
+public static void main(String args[])
+    {
+        int day;
+        boolean hol;
+        Scanner D=new Scanner(System.in);
+        day=D.nextInt();
+        hol=D.nextBoolean();
+        int wd=5;
+        int we=6;
+        if(hol==true)
+        {
+            wd+=2;
+            we+=3;
+        }
+        switch(day)
+        {
+            case 1:
+                System.out.println(we+":00");
+                break;
+            case 2:
+                System.out.println(wd+":00");
+                break;
+            case 3:
+                System.out.println(wd+":00");
+                break;
+            case 4:
+                System.out.println(wd+":00");
+                break;
+            case 5:
+                System.out.println(wd+":00");
+                break;
+            case 6:
+                System.out.println(wd+":00");
+                break;
+            case 7:
+                System.out.println(we+":00");
+            break;
+        }
+        
+   
+    }
+    
+}
