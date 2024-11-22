@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read the first number, which indicates the number of elements
+        int n = sc.nextInt();
+        
+        // Create an ArrayList to store the elements
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        // Read the next n numbers and add them to the ArrayList
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+        
+        // Print the ArrayList
+        System.out.println("ArrayList: " + list);
+        
+        // Print the first and last elements
+        System.out.println("First : " + list.get(0) + ", Last : " + list.get(list.size() - 1));
+        
+        sc.close();
+    }
+}
+
