@@ -1,0 +1,34 @@
+class College {
+    String collegeName;
+
+    public College(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void admitted() {
+        System.out.println("A student admitted in " + collegeName);
+    }
+}
+
+class Student extends College {
+    String studentName;
+    String department;
+
+    public Student(String collegeName, String studentName, String department) {
+        super(collegeName);
+        this.studentName = studentName;
+        this.department = department;
+    }
+
+    public String toString() {
+        return "CollegeName : " + collegeName + "\nStudentName : " + studentName + "\nDepartment : " + department;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("REC", "Venkatesh", "CSE");
+        student.admitted();
+        System.out.println(student.toString());
+    }
+}
