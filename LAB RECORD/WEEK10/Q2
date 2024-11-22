@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Prog {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        // Reading the input values and adding them to the ArrayList
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        // Printing initial value of ArrayList
+        System.out.println("ArrayList: " + list);
+
+        // Replacing the element at index 1 with 100
+        list.set(1, 100); // set() method replaces the element at the specified index
+
+        // Getting the index of the first occurrence of 100
+        System.out.println("Index of 100 = " + list.indexOf(100)); // indexOf() returns the first occurrence of the element
+
+        // Getting the index of the last occurrence of 100
+        System.out.println("LastIndex of 100 = " + list.lastIndexOf(100)); // lastIndexOf() returns the last occurrence of the element
+
+        // Check whether 200 is in the list or not
+        System.out.println(list.contains(200)); // contains() checks if an element exists in the list
+
+        // Print ArrayList size
+        System.out.println("Size Of ArrayList = " + list.size()); // size() returns the size of the list
+
+        // Inserting 500 at index 1
+        list.add(1, 500); // add(index, element) inserts the element at the specified index
+
+        // Removing an element from position 3
+        list.remove(3); // remove(index) removes the element at the specified index
+
+        // Print the updated ArrayList
+        System.out.println("ArrayList: " + list);
+    }
+}
