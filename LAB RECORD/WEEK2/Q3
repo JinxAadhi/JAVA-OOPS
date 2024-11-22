@@ -1,0 +1,21 @@
+import java.util.*;
+public class movie
+{
+    public static String generateSequence(int n){
+        if(n==1){
+            return"1";
+        }
+        String previousTerm=generateSequence(n-1);
+        return previousTerm+" "+n+" "+previousTerm;
+    }
+   
+    public static void main(String args[])
+    {
+    
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        String result=generateSequence(n);
+        System.out.println(result);
+        obj.close();
+    }
+}
